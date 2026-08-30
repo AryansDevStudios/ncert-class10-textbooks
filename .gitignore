@@ -4,3 +4,4 @@ __pycache__/
 inspect_*.py
 test_*.py
 Class_10/
+.firebase/
