@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "ncertbook",
     "public": ".",
     "ignore": [
       "firebase.json",
