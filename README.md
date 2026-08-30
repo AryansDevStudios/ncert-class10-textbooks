@@ -18,18 +18,34 @@ A clean, modern, and watermark-free digital library for **NCERT Class 10 Textboo
   - *Kshitij-2* (Course A Main Textbook)
   - *Kritika* (Course A Supplementary Reader)
 
-## ⚡ Features
+## 🛠️ Python Automation Scripts
 
-- **100% Watermark-Free**: Automated elimination of 2,910 image mask watermarks across all 108 PDFs.
-- **Fast Web View (Linearized)**: PDF 1.7 standard byte-range streaming for instant page 1 loading.
-- **Mozilla PDF.js Viewer**: High-performance canvas rendering, text selection, and search.
-- **jsDelivr CDN Support**: Global high-speed caching and CORS-friendly distribution.
+The codebase includes automated utilities:
+
+1. **`fetch_ncert_textbooks.py`**  
+   Downloads complete textbook packages directly from the official NCERT portal and extracts chapters, prelims, answers, and covers into structured directories under `Class_10/`.
+   ```bash
+   python fetch_ncert_textbooks.py
+   ```
+
+2. **`remove_watermarks.py`**  
+   Recursively scans all chapter PDFs, removes recurring image XObject watermarks and soft masks losslessly without degrading text/vector graphics, sanitizes metadata, and linearizes files to **PDF 1.7 Fast Web View**.
+   ```bash
+   python remove_watermarks.py
+   ```
+
+3. **`generate_manifest.py`**  
+   Scans the `Class_10/` directory, extracts page counts, chapter metadata, and file sizes, and compiles `web_data.json` for the web reader.
+   ```bash
+   python generate_manifest.py
+   ```
+
+4. **`server.py`**  
+   Local streaming development server with byte-range support (`Accept-Ranges: bytes`) and CORS headers.
+   ```bash
+   python server.py
+   ```
 
 ## 🌐 Live Web Reader
 
-You can host `index.html` on GitHub Pages, Netlify, or run locally:
-
-```bash
-python server.py
-```
-Open [http://localhost:8080](http://localhost:8080) in your browser.
+- **Live URL**: [https://aryansdevstudios.github.io/ncert-class10-textbooks/](https://aryansdevstudios.github.io/ncert-class10-textbooks/)
