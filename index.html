@@ -1311,6 +1311,21 @@
                 setTimeout(() => showToast('Use ← → to switch chapters · / to search'), 800);
             }
 
+            function getChapterPillLabel(ch) {
+                const fn = (ch.filename || '').toLowerCase().replace('.pdf', '');
+                const code = fn.slice(-2);
+                const t = (ch.type || '').toLowerCase();
+                
+                if (code === 'ps' || t === 'prelims') return 'PR';
+                if (code === 'an' || t === 'answers') return 'AN';
+                if (code === 'lp' || t === 'intro') return 'IN';
+                if (code.startsWith('a') && !isNaN(code.slice(1))) return 'A' + code.slice(1);
+                if (t === 'appendix') return code.toUpperCase();
+                if (!isNaN(code)) return code.padStart(2, '0');
+                
+                return 'CH';
+            }
+
             function renderChapterList(filter = '') {
                 if (!currentBook) return;
                 const q = filter.trim().toLowerCase();
@@ -1325,10 +1340,7 @@
                     el.className = 'ch-item' + (idx === currentChapterIdx ? ' active' : '');
                     el.dataset.idx = idx;
                     
-                    let numLabel = String(idx + 1).padStart(2, '0');
-                    if (ch.type === 'prelims') numLabel = 'PR';
-                    else if (ch.type === 'answers') numLabel = 'AN';
-                    else if (ch.type === 'appendix') numLabel = 'AP';
+                    const numLabel = getChapterPillLabel(ch);
 
                     el.innerHTML = `
                         <span class="num">${numLabel}</span>
@@ -1357,6 +1369,7 @@
                 if (!currentBook || idx < 0 || idx >= currentBook.chapters.length) return;
                 currentChapterIdx = idx;
                 const ch = currentBook.chapters[idx];
+                const lbl = getChapterPillLabel(ch);
 
                 // Update active state in sidebar
                 document.querySelectorAll('.ch-item').forEach((el) => {
@@ -1368,7 +1381,7 @@
 
                 // Update Topbar
                 topbarTitle.innerHTML = `<strong>${escapeHtml(currentBook.title)}</strong> · ${escapeHtml(ch.title)}`;
-                position.innerHTML = `<strong>${String(idx + 1).padStart(2, '0')}</strong><span class="dot">/</span><span>${currentBook.chapters.length}</span>`;
+                position.innerHTML = `<strong>${lbl}</strong><span class="dot">/</span><span>${String(currentBook.chapters.length).padStart(2, '0')}</span>`;
 
                 prevBtn.disabled = (idx === 0);
                 nextBtn.disabled = (idx === currentBook.chapters.length - 1);
