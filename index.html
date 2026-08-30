@@ -114,7 +114,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 18px;
+            padding: 0 20px;
             flex-shrink: 0;
             z-index: 20;
         }
@@ -174,7 +174,7 @@
         }
 
         .hub-content {
-            max-width: 1040px;
+            max-width: 980px;
             margin: 0 auto;
         }
 
@@ -196,15 +196,14 @@
         }
 
         /* ============================================================
-        Cards Grid (Level 1: 5 Subjects, Level 2: Books)
+        LEVEL 1: 5 Subject Cards Grid
         ============================================================ */
-        .cards-grid {
+        .subjects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 16px;
         }
 
-        /* Subject Card */
         .card {
             background: var(--bg-1);
             border: 1px solid var(--line);
@@ -213,7 +212,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 170px;
+            min-height: 160px;
             cursor: pointer;
             transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
             position: relative;
@@ -234,8 +233,8 @@
         }
 
         .card-icon {
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             border-radius: var(--radius);
             background: var(--bg-3);
             border: 1px solid var(--line-strong);
@@ -292,7 +291,15 @@
             display: inline-block;
         }
 
-        /* Level 2: Book Card */
+        /* ============================================================
+        LEVEL 2: Proper Portrait Book Cards Grid
+        ============================================================ */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 280px));
+            gap: 20px;
+        }
+
         .book-card {
             background: var(--bg-1);
             border: 1px solid var(--line);
@@ -301,29 +308,55 @@
             display: flex;
             flex-direction: column;
             cursor: pointer;
-            transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+            transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
         }
 
         .book-card:hover {
             background: var(--bg-2);
             border-color: var(--line-strong);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.4);
         }
 
-        .book-cover-wrap {
-            height: 160px;
-            background: var(--bg-2);
+        /* Authentic Portrait Book Stage */
+        .book-cover-stage {
+            padding: 24px 16px 20px;
+            background: radial-gradient(circle at 50% 30%, var(--bg-3) 0%, var(--bg-2) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-bottom: 1px solid var(--line);
-            overflow: hidden;
-            position: relative;
+            min-height: 220px;
         }
 
-        .book-cover-wrap img {
-            width: 100%;
-            height: 100%;
+        .book-cover-img {
+            width: 130px;
+            height: 185px;
             object-fit: cover;
-            object-position: top;
-            opacity: 0.9;
+            border-radius: 5px;
+            box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform var(--t-fast), box-shadow var(--t-fast);
+        }
+
+        .book-card:hover .book-cover-img {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 14px 30px -4px rgba(0, 0, 0, 0.8), 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .book-cover-placeholder {
+            width: 130px;
+            height: 185px;
+            border-radius: 5px;
+            background: var(--bg-3);
+            border: 1px solid var(--line-strong);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-3);
+            font-size: 11px;
+            gap: 6px;
         }
 
         .book-card-body {
@@ -335,11 +368,11 @@
         }
 
         .book-card-title {
-            font-size: 14px;
+            font-size: 14.5px;
             font-weight: 600;
             color: var(--text);
             margin-bottom: 4px;
-            line-height: 1.3;
+            line-height: 1.35;
         }
 
         .book-card-meta {
@@ -359,8 +392,8 @@
         Buttons & Navigation Tokens
         ============================================================ */
         .btn {
-            height: 30px;
-            padding: 0 10px;
+            height: 32px;
+            padding: 0 12px;
             border-radius: var(--radius-sm);
             background: var(--bg-2);
             border: 1px solid var(--line);
@@ -847,7 +880,11 @@
             }
 
             .hub-container {
-                padding: 24px 16px 40px;
+                padding: 20px 16px 36px;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -876,7 +913,7 @@
                     <p class="hub-subtitle">Choose from Hindi, English, Maths, Science, or Social Science (SST) to view textbooks</p>
                 </div>
 
-                <div class="cards-grid" id="subjectsGrid">
+                <div class="subjects-grid" id="subjectsGrid">
                     <!-- 5 Subject Cards Injected by JS -->
                 </div>
             </div>
@@ -907,7 +944,7 @@
                     <p class="hub-subtitle" id="booksViewDesc">Available curriculum books in this subject</p>
                 </div>
 
-                <div class="cards-grid" id="subjectBooksGrid">
+                <div class="books-grid" id="subjectBooksGrid">
                     <!-- Book Cards Injected by JS -->
                 </div>
             </div>
@@ -1171,7 +1208,7 @@
             }
 
             // ============================================================
-            // LEVEL 2: Select Subject & Render its Book Cards
+            // LEVEL 2: Select Subject & Render its Book Cards (Portrait)
             // ============================================================
             function selectSubject(subjectKey) {
                 currentSubject = SUBJECTS.find(s => s.key === subjectKey);
@@ -1193,8 +1230,15 @@
                     const zipUrl = b.zip_url ? getPdfUrl(b.zip_url) : '';
                     return `
                         <div class="book-card" onclick="window.appNav.openReader('${b.id}', 0)">
-                            <div class="book-cover-wrap">
-                                ${coverUrl ? `<img src="${coverUrl}" alt="${escapeHtml(b.title)}">` : ''}
+                            <div class="book-cover-stage">
+                                ${coverUrl ? `
+                                    <img class="book-cover-img" src="${coverUrl}" alt="${escapeHtml(b.title)}">
+                                ` : `
+                                    <div class="book-cover-placeholder">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg>
+                                        <span>No Cover</span>
+                                    </div>
+                                `}
                             </div>
                             <div class="book-card-body">
                                 <div>
