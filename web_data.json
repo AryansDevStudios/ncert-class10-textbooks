@@ -1,0 +1,926 @@
+[
+  {
+    "id": "First_Flight",
+    "category": "English",
+    "category_key": "English",
+    "title": "First Flight",
+    "cover_url": "Class_10/English/First_Flight/cover.jpg",
+    "zip_url": "Class_10/English/First_Flight/jeff1_complete.zip",
+    "chapters_count": 9,
+    "total_files": 10,
+    "theme_color": "#3B82F6",
+    "badge": "English",
+    "chapters": [
+      {
+        "filename": "jeff1ps.pdf",
+        "title": "Preliminary Pages & Table of Contents",
+        "type": "prelims",
+        "size_formatted": "578.8 KB",
+        "size_bytes": 592686,
+        "url": "Class_10/English/First_Flight/chapters/jeff1ps.pdf"
+      },
+      {
+        "filename": "jeff101.pdf",
+        "title": "A Letter to God & Poems",
+        "type": "chapter",
+        "size_formatted": "1114.0 KB",
+        "size_bytes": 1140763,
+        "url": "Class_10/English/First_Flight/chapters/jeff101.pdf"
+      },
+      {
+        "filename": "jeff102.pdf",
+        "title": "Nelson Mandela: Long Walk to Freedom",
+        "type": "chapter",
+        "size_formatted": "1088.5 KB",
+        "size_bytes": 1114644,
+        "url": "Class_10/English/First_Flight/chapters/jeff102.pdf"
+      },
+      {
+        "filename": "jeff103.pdf",
+        "title": "Two Stories about Flying",
+        "type": "chapter",
+        "size_formatted": "1238.3 KB",
+        "size_bytes": 1268017,
+        "url": "Class_10/English/First_Flight/chapters/jeff103.pdf"
+      },
+      {
+        "filename": "jeff104.pdf",
+        "title": "From the Diary of Anne Frank",
+        "type": "chapter",
+        "size_formatted": "937.7 KB",
+        "size_bytes": 960175,
+        "url": "Class_10/English/First_Flight/chapters/jeff104.pdf"
+      },
+      {
+        "filename": "jeff105.pdf",
+        "title": "Glimpses of India",
+        "type": "chapter",
+        "size_formatted": "963.8 KB",
+        "size_bytes": 986973,
+        "url": "Class_10/English/First_Flight/chapters/jeff105.pdf"
+      },
+      {
+        "filename": "jeff106.pdf",
+        "title": "Mijbil the Otter",
+        "type": "chapter",
+        "size_formatted": "988.3 KB",
+        "size_bytes": 1012028,
+        "url": "Class_10/English/First_Flight/chapters/jeff106.pdf"
+      },
+      {
+        "filename": "jeff107.pdf",
+        "title": "Madam Rides the Bus",
+        "type": "chapter",
+        "size_formatted": "1253.3 KB",
+        "size_bytes": 1283428,
+        "url": "Class_10/English/First_Flight/chapters/jeff107.pdf"
+      },
+      {
+        "filename": "jeff108.pdf",
+        "title": "The Sermon at Benares",
+        "type": "chapter",
+        "size_formatted": "908.2 KB",
+        "size_bytes": 930004,
+        "url": "Class_10/English/First_Flight/chapters/jeff108.pdf"
+      },
+      {
+        "filename": "jeff109.pdf",
+        "title": "The Proposal",
+        "type": "chapter",
+        "size_formatted": "1031.8 KB",
+        "size_bytes": 1056610,
+        "url": "Class_10/English/First_Flight/chapters/jeff109.pdf"
+      }
+    ]
+  },
+  {
+    "id": "Footprints_Without_Feet",
+    "category": "English",
+    "category_key": "English",
+    "title": "Footprints Without Feet",
+    "cover_url": "Class_10/English/Footprints_Without_Feet/cover.jpg",
+    "zip_url": "Class_10/English/Footprints_Without_Feet/jefp1_complete.zip",
+    "chapters_count": 9,
+    "total_files": 10,
+    "theme_color": "#3B82F6",
+    "badge": "English",
+    "chapters": [
+      {
+        "filename": "jefp1ps.pdf",
+        "title": "Preliminary Pages & Table of Contents",
+        "type": "prelims",
+        "size_formatted": "798.5 KB",
+        "size_bytes": 817628,
+        "url": "Class_10/English/Footprints_Without_Feet/chapters/jefp1ps.pdf"
+      },
+      {
+        "filename": "jefp101.pdf",
+        "title": "A Triumph of Surgery",
+        "type": "chapter",
+        "size_formatted": "2012.1 KB",
+        "size_bytes": 2060400,
+        "url": "Class_10/English/Footprints_Without_Feet/chapters/jefp101.pdf"
+      },
+      {
+        "filename": "jefp102.pdf",
+        "title": "The Thief’s Story",
+        "type": "chapter",
+        "size_formatted": "1739.0 KB",
+        "size_bytes": 1780783,
+        "url": "Class_10/English/Footprints_Without_Feet/chapters/jefp102.pdf"
+      },
+      {
+        "filename": "jefp103.pdf",
+        "title": "The Midnight Visitor",
+        "type": "chapter",
+        "size_formatted": "1917.0 KB",
+        "size_bytes": 1963036,
+        "url": "Class_10/English/Footprints_Without_Feet/chapters/jefp103.pdf"
+      },
+      {
+        "filename": "jefp104.pdf",
+        "title": "A Question of Trust",
+        "type": "chapter",
+        "size_formatted": "1739.8 KB",
+        "size_bytes": 1781517,
+        "url": "Class_10/English/Footprints_Without_Feet/chapters/jefp104.pdf"
+      },
+      {
+        "filename": "jefp105.pdf",
+        "title": "Footprints without Feet",
+        "type": "chapter",
+        "size_formatted": "1811.3 KB",
+        "size_bytes": 1854766,
+        "url": "Class_10/English/Footprints_Without_Feet/chapters/jefp105.pdf"
+      },
+      {
+        "filename": "jefp106.pdf",
+        "title": "The Making of a Scientist",
+        "type": "chapter",
+        "size_formatted": "1788.0 KB",
+        "size_bytes": 1830893,
+        "url": "Class_10/English/Footprints_Without_Feet/chapters/jefp106.pdf"
+      },
+      {
+        "filename": "jefp107.pdf",
+        "title": "The Necklace",
+        "type": "chapter",
+        "size_formatted": "2051.7 KB",
+        "size_bytes": 2100923,
+        "url": "Class_10/English/Footprints_Without_Feet/chapters/jefp107.pdf"
+      },
+      {
+        "filename": "jefp108.pdf",
+        "title": "Bholi",
+        "type": "chapter",
+        "size_formatted": "2076.6 KB",
+        "size_bytes": 2126476,
+        "url": "Class_10/English/Footprints_Without_Feet/chapters/jefp108.pdf"
+      },
+      {
+        "filename": "jefp109.pdf",
+        "title": "The Book That Saved the Earth",
+        "type": "chapter",
+        "size_formatted": "2773.7 KB",
+        "size_bytes": 2840229,
+        "url": "Class_10/English/Footprints_Without_Feet/chapters/jefp109.pdf"
+      }
+    ]
+  },
+  {
+    "id": "Kritika",
+    "category": "Hindi",
+    "category_key": "Hindi",
+    "title": "Kritika",
+    "cover_url": "Class_10/Hindi/Kritika/cover.jpg",
+    "zip_url": "Class_10/Hindi/Kritika/jhkr1_complete.zip",
+    "chapters_count": 3,
+    "total_files": 5,
+    "theme_color": "#EC4899",
+    "badge": "Hindi",
+    "chapters": [
+      {
+        "filename": "jhkr1ps.pdf",
+        "title": "Preliminary Pages & Table of Contents",
+        "type": "prelims",
+        "size_formatted": "398.5 KB",
+        "size_bytes": 408070,
+        "url": "Class_10/Hindi/Kritika/chapters/jhkr1ps.pdf"
+      },
+      {
+        "filename": "jhkr101.pdf",
+        "title": "माता का अँचल",
+        "type": "chapter",
+        "size_formatted": "477.7 KB",
+        "size_bytes": 489175,
+        "url": "Class_10/Hindi/Kritika/chapters/jhkr101.pdf"
+      },
+      {
+        "filename": "jhkr102.pdf",
+        "title": "साना-साना हाथ जोड़ि...",
+        "type": "chapter",
+        "size_formatted": "428.5 KB",
+        "size_bytes": 438749,
+        "url": "Class_10/Hindi/Kritika/chapters/jhkr102.pdf"
+      },
+      {
+        "filename": "jhkr103.pdf",
+        "title": "मैं क्यों लिखता हूँ?",
+        "type": "chapter",
+        "size_formatted": "188.0 KB",
+        "size_bytes": 192488,
+        "url": "Class_10/Hindi/Kritika/chapters/jhkr103.pdf"
+      },
+      {
+        "filename": "jhkr1lp.pdf",
+        "title": "लेखक परिचय (Author Profiles)",
+        "type": "intro",
+        "size_formatted": "49.3 KB",
+        "size_bytes": 50491,
+        "url": "Class_10/Hindi/Kritika/chapters/jhkr1lp.pdf"
+      }
+    ]
+  },
+  {
+    "id": "Kshitij_2",
+    "category": "Hindi",
+    "category_key": "Hindi",
+    "title": "Kshitij 2",
+    "cover_url": "Class_10/Hindi/Kshitij_2/cover.jpg",
+    "zip_url": "Class_10/Hindi/Kshitij_2/jhks1_complete.zip",
+    "chapters_count": 12,
+    "total_files": 13,
+    "theme_color": "#EC4899",
+    "badge": "Hindi",
+    "chapters": [
+      {
+        "filename": "jhks1ps.pdf",
+        "title": "Preliminary Pages & Table of Contents",
+        "type": "prelims",
+        "size_formatted": "1170.0 KB",
+        "size_bytes": 1198119,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks1ps.pdf"
+      },
+      {
+        "filename": "jhks101.pdf",
+        "title": "पद (सूरदास)",
+        "type": "chapter",
+        "size_formatted": "495.2 KB",
+        "size_bytes": 507062,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks101.pdf"
+      },
+      {
+        "filename": "jhks102.pdf",
+        "title": "राम-लक्ष्मण-परशुराम संवाद",
+        "type": "chapter",
+        "size_formatted": "311.4 KB",
+        "size_bytes": 318884,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks102.pdf"
+      },
+      {
+        "filename": "jhks103.pdf",
+        "title": "आत्मकथ्य (जयशंकर प्रसाद)",
+        "type": "chapter",
+        "size_formatted": "140.6 KB",
+        "size_bytes": 143984,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks103.pdf"
+      },
+      {
+        "filename": "jhks104.pdf",
+        "title": "उत्साह और अट नहीं रही (निराला)",
+        "type": "chapter",
+        "size_formatted": "340.8 KB",
+        "size_bytes": 348971,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks104.pdf"
+      },
+      {
+        "filename": "jhks105.pdf",
+        "title": "यह दंतुरित मुस्कान और फसल (नागार्जुन)",
+        "type": "chapter",
+        "size_formatted": "245.5 KB",
+        "size_bytes": 251396,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks105.pdf"
+      },
+      {
+        "filename": "jhks106.pdf",
+        "title": "संगतकार (मंगलेश डबराल)",
+        "type": "chapter",
+        "size_formatted": "480.7 KB",
+        "size_bytes": 492193,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks106.pdf"
+      },
+      {
+        "filename": "jhks107.pdf",
+        "title": "नेताजी का चश्मा",
+        "type": "chapter",
+        "size_formatted": "285.5 KB",
+        "size_bytes": 292369,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks107.pdf"
+      },
+      {
+        "filename": "jhks108.pdf",
+        "title": "बालगोबिन भगत",
+        "type": "chapter",
+        "size_formatted": "266.7 KB",
+        "size_bytes": 273147,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks108.pdf"
+      },
+      {
+        "filename": "jhks109.pdf",
+        "title": "लखनवी अंदाज़",
+        "type": "chapter",
+        "size_formatted": "231.6 KB",
+        "size_bytes": 237169,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks109.pdf"
+      },
+      {
+        "filename": "jhks110.pdf",
+        "title": "एक कहानी यह भी",
+        "type": "chapter",
+        "size_formatted": "536.7 KB",
+        "size_bytes": 549608,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks110.pdf"
+      },
+      {
+        "filename": "jhks111.pdf",
+        "title": "नौबतखाने में इबादत",
+        "type": "chapter",
+        "size_formatted": "335.8 KB",
+        "size_bytes": 343896,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks111.pdf"
+      },
+      {
+        "filename": "jhks112.pdf",
+        "title": "संस्कृति",
+        "type": "chapter",
+        "size_formatted": "209.2 KB",
+        "size_bytes": 214214,
+        "url": "Class_10/Hindi/Kshitij_2/chapters/jhks112.pdf"
+      }
+    ]
+  },
+  {
+    "id": "Mathematics",
+    "category": "Mathematics",
+    "category_key": "Mathematics",
+    "title": "Mathematics",
+    "cover_url": "Class_10/Mathematics/Mathematics/cover.jpg",
+    "zip_url": "Class_10/Mathematics/Mathematics/jemh1_complete.zip",
+    "chapters_count": 14,
+    "total_files": 18,
+    "theme_color": "#8B5CF6",
+    "badge": "Maths",
+    "chapters": [
+      {
+        "filename": "jemh1ps.pdf",
+        "title": "Preliminary Pages & Table of Contents",
+        "type": "prelims",
+        "size_formatted": "872.8 KB",
+        "size_bytes": 893731,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh1ps.pdf"
+      },
+      {
+        "filename": "jemh101.pdf",
+        "title": "Real Numbers",
+        "type": "chapter",
+        "size_formatted": "890.5 KB",
+        "size_bytes": 911832,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh101.pdf"
+      },
+      {
+        "filename": "jemh102.pdf",
+        "title": "Polynomials",
+        "type": "chapter",
+        "size_formatted": "705.5 KB",
+        "size_bytes": 722416,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh102.pdf"
+      },
+      {
+        "filename": "jemh103.pdf",
+        "title": "Pair of Linear Equations in Two Variables",
+        "type": "chapter",
+        "size_formatted": "1119.5 KB",
+        "size_bytes": 1146365,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh103.pdf"
+      },
+      {
+        "filename": "jemh104.pdf",
+        "title": "Quadratic Equations",
+        "type": "chapter",
+        "size_formatted": "742.1 KB",
+        "size_bytes": 759956,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh104.pdf"
+      },
+      {
+        "filename": "jemh105.pdf",
+        "title": "Arithmetic Progressions",
+        "type": "chapter",
+        "size_formatted": "741.9 KB",
+        "size_bytes": 759731,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh105.pdf"
+      },
+      {
+        "filename": "jemh106.pdf",
+        "title": "Triangles",
+        "type": "chapter",
+        "size_formatted": "1025.0 KB",
+        "size_bytes": 1049571,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh106.pdf"
+      },
+      {
+        "filename": "jemh107.pdf",
+        "title": "Coordinate Geometry",
+        "type": "chapter",
+        "size_formatted": "1106.2 KB",
+        "size_bytes": 1132766,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh107.pdf"
+      },
+      {
+        "filename": "jemh108.pdf",
+        "title": "Introduction to Trigonometry",
+        "type": "chapter",
+        "size_formatted": "880.0 KB",
+        "size_bytes": 901082,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh108.pdf"
+      },
+      {
+        "filename": "jemh109.pdf",
+        "title": "Some Applications of Trigonometry",
+        "type": "chapter",
+        "size_formatted": "1062.0 KB",
+        "size_bytes": 1087460,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh109.pdf"
+      },
+      {
+        "filename": "jemh110.pdf",
+        "title": "Circles",
+        "type": "chapter",
+        "size_formatted": "665.2 KB",
+        "size_bytes": 681162,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh110.pdf"
+      },
+      {
+        "filename": "jemh111.pdf",
+        "title": "Areas Related to Circles",
+        "type": "chapter",
+        "size_formatted": "797.1 KB",
+        "size_bytes": 816186,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh111.pdf"
+      },
+      {
+        "filename": "jemh112.pdf",
+        "title": "Surface Areas and Volumes",
+        "type": "chapter",
+        "size_formatted": "896.9 KB",
+        "size_bytes": 918384,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh112.pdf"
+      },
+      {
+        "filename": "jemh113.pdf",
+        "title": "Statistics",
+        "type": "chapter",
+        "size_formatted": "756.2 KB",
+        "size_bytes": 774363,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh113.pdf"
+      },
+      {
+        "filename": "jemh114.pdf",
+        "title": "Probability",
+        "type": "chapter",
+        "size_formatted": "769.4 KB",
+        "size_bytes": 787816,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh114.pdf"
+      },
+      {
+        "filename": "jemh1a1.pdf",
+        "title": "Appendix I",
+        "type": "appendix",
+        "size_formatted": "635.9 KB",
+        "size_bytes": 651191,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh1a1.pdf"
+      },
+      {
+        "filename": "jemh1a2.pdf",
+        "title": "Appendix II",
+        "type": "appendix",
+        "size_formatted": "699.5 KB",
+        "size_bytes": 716337,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh1a2.pdf"
+      },
+      {
+        "filename": "jemh1an.pdf",
+        "title": "Answers & Solutions",
+        "type": "answers",
+        "size_formatted": "677.1 KB",
+        "size_bytes": 693340,
+        "url": "Class_10/Mathematics/Mathematics/chapters/jemh1an.pdf"
+      }
+    ]
+  },
+  {
+    "id": "Science",
+    "category": "Science",
+    "category_key": "Science",
+    "title": "Science",
+    "cover_url": "Class_10/Science/Science/cover.jpg",
+    "zip_url": "Class_10/Science/Science/jesc1_complete.zip",
+    "chapters_count": 13,
+    "total_files": 15,
+    "theme_color": "#10B981",
+    "badge": "Science",
+    "chapters": [
+      {
+        "filename": "jesc1ps.pdf",
+        "title": "Preliminary Pages & Table of Contents",
+        "type": "prelims",
+        "size_formatted": "2427.9 KB",
+        "size_bytes": 2486212,
+        "url": "Class_10/Science/Science/chapters/jesc1ps.pdf"
+      },
+      {
+        "filename": "jesc101.pdf",
+        "title": "Chemical Reactions and Equations",
+        "type": "chapter",
+        "size_formatted": "3059.9 KB",
+        "size_bytes": 3133300,
+        "url": "Class_10/Science/Science/chapters/jesc101.pdf"
+      },
+      {
+        "filename": "jesc102.pdf",
+        "title": "Acids, Bases and Salts",
+        "type": "chapter",
+        "size_formatted": "2548.0 KB",
+        "size_bytes": 2609132,
+        "url": "Class_10/Science/Science/chapters/jesc102.pdf"
+      },
+      {
+        "filename": "jesc103.pdf",
+        "title": "Metals and Non-metals",
+        "type": "chapter",
+        "size_formatted": "1458.0 KB",
+        "size_bytes": 1492985,
+        "url": "Class_10/Science/Science/chapters/jesc103.pdf"
+      },
+      {
+        "filename": "jesc104.pdf",
+        "title": "Carbon and its Compounds",
+        "type": "chapter",
+        "size_formatted": "11391.1 KB",
+        "size_bytes": 11664508,
+        "url": "Class_10/Science/Science/chapters/jesc104.pdf"
+      },
+      {
+        "filename": "jesc105.pdf",
+        "title": "Life Processes",
+        "type": "chapter",
+        "size_formatted": "7472.3 KB",
+        "size_bytes": 7651595,
+        "url": "Class_10/Science/Science/chapters/jesc105.pdf"
+      },
+      {
+        "filename": "jesc106.pdf",
+        "title": "Control and Coordination",
+        "type": "chapter",
+        "size_formatted": "1476.5 KB",
+        "size_bytes": 1511970,
+        "url": "Class_10/Science/Science/chapters/jesc106.pdf"
+      },
+      {
+        "filename": "jesc107.pdf",
+        "title": "How do Organisms Reproduce?",
+        "type": "chapter",
+        "size_formatted": "2824.6 KB",
+        "size_bytes": 2892363,
+        "url": "Class_10/Science/Science/chapters/jesc107.pdf"
+      },
+      {
+        "filename": "jesc108.pdf",
+        "title": "Heredity",
+        "type": "chapter",
+        "size_formatted": "18198.3 KB",
+        "size_bytes": 18635021,
+        "url": "Class_10/Science/Science/chapters/jesc108.pdf"
+      },
+      {
+        "filename": "jesc109.pdf",
+        "title": "Light – Reflection and Refraction",
+        "type": "chapter",
+        "size_formatted": "928.1 KB",
+        "size_bytes": 950344,
+        "url": "Class_10/Science/Science/chapters/jesc109.pdf"
+      },
+      {
+        "filename": "jesc110.pdf",
+        "title": "The Human Eye and the Colourful World",
+        "type": "chapter",
+        "size_formatted": "1010.4 KB",
+        "size_bytes": 1034674,
+        "url": "Class_10/Science/Science/chapters/jesc110.pdf"
+      },
+      {
+        "filename": "jesc111.pdf",
+        "title": "Electricity",
+        "type": "chapter",
+        "size_formatted": "1016.8 KB",
+        "size_bytes": 1041254,
+        "url": "Class_10/Science/Science/chapters/jesc111.pdf"
+      },
+      {
+        "filename": "jesc112.pdf",
+        "title": "Magnetic Effects of Electric Current",
+        "type": "chapter",
+        "size_formatted": "1321.8 KB",
+        "size_bytes": 1353553,
+        "url": "Class_10/Science/Science/chapters/jesc112.pdf"
+      },
+      {
+        "filename": "jesc113.pdf",
+        "title": "Our Environment",
+        "type": "chapter",
+        "size_formatted": "3340.0 KB",
+        "size_bytes": 3420201,
+        "url": "Class_10/Science/Science/chapters/jesc113.pdf"
+      },
+      {
+        "filename": "jesc1an.pdf",
+        "title": "Answers & Solutions",
+        "type": "answers",
+        "size_formatted": "584.3 KB",
+        "size_bytes": 598364,
+        "url": "Class_10/Science/Science/chapters/jesc1an.pdf"
+      }
+    ]
+  },
+  {
+    "id": "Economics_Understanding_Economic_Development",
+    "category": "Social Science",
+    "category_key": "Social_Science",
+    "title": "Economics: Understanding Economic Development",
+    "cover_url": "Class_10/Social_Science/Economics_Understanding_Economic_Development/cover.jpg",
+    "zip_url": "Class_10/Social_Science/Economics_Understanding_Economic_Development/jess2_complete.zip",
+    "chapters_count": 5,
+    "total_files": 6,
+    "theme_color": "#F59E0B",
+    "badge": "Social Science",
+    "chapters": [
+      {
+        "filename": "jess2ps.pdf",
+        "title": "Preliminary Pages & Table of Contents",
+        "type": "prelims",
+        "size_formatted": "751.3 KB",
+        "size_bytes": 769306,
+        "url": "Class_10/Social_Science/Economics_Understanding_Economic_Development/chapters/jess2ps.pdf"
+      },
+      {
+        "filename": "jess201.pdf",
+        "title": "Development",
+        "type": "chapter",
+        "size_formatted": "1420.7 KB",
+        "size_bytes": 1454798,
+        "url": "Class_10/Social_Science/Economics_Understanding_Economic_Development/chapters/jess201.pdf"
+      },
+      {
+        "filename": "jess202.pdf",
+        "title": "Sectors of the Indian Economy",
+        "type": "chapter",
+        "size_formatted": "1428.0 KB",
+        "size_bytes": 1462323,
+        "url": "Class_10/Social_Science/Economics_Understanding_Economic_Development/chapters/jess202.pdf"
+      },
+      {
+        "filename": "jess203.pdf",
+        "title": "Money and Credit",
+        "type": "chapter",
+        "size_formatted": "2302.7 KB",
+        "size_bytes": 2357915,
+        "url": "Class_10/Social_Science/Economics_Understanding_Economic_Development/chapters/jess203.pdf"
+      },
+      {
+        "filename": "jess204.pdf",
+        "title": "Globalisation and the Indian Economy",
+        "type": "chapter",
+        "size_formatted": "2269.5 KB",
+        "size_bytes": 2323943,
+        "url": "Class_10/Social_Science/Economics_Understanding_Economic_Development/chapters/jess204.pdf"
+      },
+      {
+        "filename": "jess205.pdf",
+        "title": "Consumer Rights",
+        "type": "chapter",
+        "size_formatted": "1919.2 KB",
+        "size_bytes": 1965270,
+        "url": "Class_10/Social_Science/Economics_Understanding_Economic_Development/chapters/jess205.pdf"
+      }
+    ]
+  },
+  {
+    "id": "Geography_Contemporary_India",
+    "category": "Social Science",
+    "category_key": "Social_Science",
+    "title": "Geography: Contemporary India - II",
+    "cover_url": "Class_10/Social_Science/Geography_Contemporary_India/cover.jpg",
+    "zip_url": "Class_10/Social_Science/Geography_Contemporary_India/jess1_complete.zip",
+    "chapters_count": 7,
+    "total_files": 9,
+    "theme_color": "#F59E0B",
+    "badge": "Social Science",
+    "chapters": [
+      {
+        "filename": "jess1ps.pdf",
+        "title": "Preliminary Pages & Table of Contents",
+        "type": "prelims",
+        "size_formatted": "751.8 KB",
+        "size_bytes": 769813,
+        "url": "Class_10/Social_Science/Geography_Contemporary_India/chapters/jess1ps.pdf"
+      },
+      {
+        "filename": "jess101.pdf",
+        "title": "Resources and Development",
+        "type": "chapter",
+        "size_formatted": "1005.9 KB",
+        "size_bytes": 1030020,
+        "url": "Class_10/Social_Science/Geography_Contemporary_India/chapters/jess101.pdf"
+      },
+      {
+        "filename": "jess102.pdf",
+        "title": "Forest and Wildlife Resources",
+        "type": "chapter",
+        "size_formatted": "1150.8 KB",
+        "size_bytes": 1178452,
+        "url": "Class_10/Social_Science/Geography_Contemporary_India/chapters/jess102.pdf"
+      },
+      {
+        "filename": "jess103.pdf",
+        "title": "Water Resources",
+        "type": "chapter",
+        "size_formatted": "1281.6 KB",
+        "size_bytes": 1312309,
+        "url": "Class_10/Social_Science/Geography_Contemporary_India/chapters/jess103.pdf"
+      },
+      {
+        "filename": "jess104.pdf",
+        "title": "Agriculture",
+        "type": "chapter",
+        "size_formatted": "1479.8 KB",
+        "size_bytes": 1515362,
+        "url": "Class_10/Social_Science/Geography_Contemporary_India/chapters/jess104.pdf"
+      },
+      {
+        "filename": "jess105.pdf",
+        "title": "Minerals and Energy Resources",
+        "type": "chapter",
+        "size_formatted": "1675.3 KB",
+        "size_bytes": 1715515,
+        "url": "Class_10/Social_Science/Geography_Contemporary_India/chapters/jess105.pdf"
+      },
+      {
+        "filename": "jess106.pdf",
+        "title": "Manufacturing Industries",
+        "type": "chapter",
+        "size_formatted": "826.1 KB",
+        "size_bytes": 845897,
+        "url": "Class_10/Social_Science/Geography_Contemporary_India/chapters/jess106.pdf"
+      },
+      {
+        "filename": "jess107.pdf",
+        "title": "Lifelines of National Economy",
+        "type": "chapter",
+        "size_formatted": "1371.7 KB",
+        "size_bytes": 1404590,
+        "url": "Class_10/Social_Science/Geography_Contemporary_India/chapters/jess107.pdf"
+      },
+      {
+        "filename": "jess1a1.pdf",
+        "title": "Appendix I",
+        "type": "appendix",
+        "size_formatted": "142.0 KB",
+        "size_bytes": 145357,
+        "url": "Class_10/Social_Science/Geography_Contemporary_India/chapters/jess1a1.pdf"
+      }
+    ]
+  },
+  {
+    "id": "History_India_and_the_Contemporary_World_II",
+    "category": "Social Science",
+    "category_key": "Social_Science",
+    "title": "History: India and the Contemporary World - II",
+    "cover_url": "Class_10/Social_Science/History_India_and_the_Contemporary_World_II/cover.jpg",
+    "zip_url": "Class_10/Social_Science/History_India_and_the_Contemporary_World_II/jess3_complete.zip",
+    "chapters_count": 5,
+    "total_files": 6,
+    "theme_color": "#F59E0B",
+    "badge": "Social Science",
+    "chapters": [
+      {
+        "filename": "jess3ps.pdf",
+        "title": "Preliminary Pages & Table of Contents",
+        "type": "prelims",
+        "size_formatted": "905.5 KB",
+        "size_bytes": 927196,
+        "url": "Class_10/Social_Science/History_India_and_the_Contemporary_World_II/chapters/jess3ps.pdf"
+      },
+      {
+        "filename": "jess301.pdf",
+        "title": "The Rise of Nationalism in Europe",
+        "type": "chapter",
+        "size_formatted": "3839.1 KB",
+        "size_bytes": 3931234,
+        "url": "Class_10/Social_Science/History_India_and_the_Contemporary_World_II/chapters/jess301.pdf"
+      },
+      {
+        "filename": "jess302.pdf",
+        "title": "Nationalism in India",
+        "type": "chapter",
+        "size_formatted": "3621.0 KB",
+        "size_bytes": 3707935,
+        "url": "Class_10/Social_Science/History_India_and_the_Contemporary_World_II/chapters/jess302.pdf"
+      },
+      {
+        "filename": "jess303.pdf",
+        "title": "The Making of a Global World",
+        "type": "chapter",
+        "size_formatted": "4238.8 KB",
+        "size_bytes": 4340572,
+        "url": "Class_10/Social_Science/History_India_and_the_Contemporary_World_II/chapters/jess303.pdf"
+      },
+      {
+        "filename": "jess304.pdf",
+        "title": "The Age of Industrialisation",
+        "type": "chapter",
+        "size_formatted": "4437.3 KB",
+        "size_bytes": 4543745,
+        "url": "Class_10/Social_Science/History_India_and_the_Contemporary_World_II/chapters/jess304.pdf"
+      },
+      {
+        "filename": "jess305.pdf",
+        "title": "Print Culture and the Modern World",
+        "type": "chapter",
+        "size_formatted": "3780.8 KB",
+        "size_bytes": 3871525,
+        "url": "Class_10/Social_Science/History_India_and_the_Contemporary_World_II/chapters/jess305.pdf"
+      }
+    ]
+  },
+  {
+    "id": "Political_Science_Democratic_Politics",
+    "category": "Social Science",
+    "category_key": "Social_Science",
+    "title": "Political Science: Democratic Politics - II",
+    "cover_url": "Class_10/Social_Science/Political_Science_Democratic_Politics/cover.jpg",
+    "zip_url": "Class_10/Social_Science/Political_Science_Democratic_Politics/jess4_complete.zip",
+    "chapters_count": 5,
+    "total_files": 6,
+    "theme_color": "#F59E0B",
+    "badge": "Social Science",
+    "chapters": [
+      {
+        "filename": "jess4ps.pdf",
+        "title": "Preliminary Pages & Table of Contents",
+        "type": "prelims",
+        "size_formatted": "935.0 KB",
+        "size_bytes": 957452,
+        "url": "Class_10/Social_Science/Political_Science_Democratic_Politics/chapters/jess4ps.pdf"
+      },
+      {
+        "filename": "jess401.pdf",
+        "title": "Power Sharing",
+        "type": "chapter",
+        "size_formatted": "1059.0 KB",
+        "size_bytes": 1084392,
+        "url": "Class_10/Social_Science/Political_Science_Democratic_Politics/chapters/jess401.pdf"
+      },
+      {
+        "filename": "jess402.pdf",
+        "title": "Federalism",
+        "type": "chapter",
+        "size_formatted": "1628.9 KB",
+        "size_bytes": 1668016,
+        "url": "Class_10/Social_Science/Political_Science_Democratic_Politics/chapters/jess402.pdf"
+      },
+      {
+        "filename": "jess403.pdf",
+        "title": "Gender, Religion and Caste",
+        "type": "chapter",
+        "size_formatted": "1228.9 KB",
+        "size_bytes": 1258443,
+        "url": "Class_10/Social_Science/Political_Science_Democratic_Politics/chapters/jess403.pdf"
+      },
+      {
+        "filename": "jess404.pdf",
+        "title": "Political Parties",
+        "type": "chapter",
+        "size_formatted": "2381.7 KB",
+        "size_bytes": 2438870,
+        "url": "Class_10/Social_Science/Political_Science_Democratic_Politics/chapters/jess404.pdf"
+      },
+      {
+        "filename": "jess405.pdf",
+        "title": "Outcomes of Democracy",
+        "type": "chapter",
+        "size_formatted": "1346.1 KB",
+        "size_bytes": 1378456,
+        "url": "Class_10/Social_Science/Political_Science_Democratic_Politics/chapters/jess405.pdf"
+      }
+    ]
+  }
+]
