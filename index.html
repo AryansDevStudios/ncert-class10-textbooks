@@ -1167,6 +1167,108 @@
             }
 
             // ============================================================
+            // URL Hash Router & State Persistence
+            // ============================================================
+            let isNavigating = false;
+
+            function parseHash() {
+                const raw = window.location.hash.replace(/^#\/?/, '').trim();
+                if (!raw) return { view: 'subjects' };
+
+                const parts = raw.split('/').map(decodeURIComponent).filter(Boolean);
+                
+                // Case 1: #/subject/:key or #subject/:key
+                if (parts[0] === 'subject' && parts[1]) {
+                    return { view: 'subject', subjectKey: parts[1] };
+                }
+
+                // Case 2: #/book/:bookId/:chapter or #book/:bookId/:chapter
+                if (parts[0] === 'book' && parts[1]) {
+                    return { view: 'reader', bookId: parts[1], chapter: parts[2] || '0' };
+                }
+
+                // Case 3: Direct #/:bookId/:chapter
+                if (parts.length >= 2) {
+                    return { view: 'reader', bookId: parts[0], chapter: parts[1] };
+                }
+
+                // Case 4: Single token e.g. #Mathematics or #jemh101 or #Hindi
+                if (parts.length === 1) {
+                    const token = parts[0];
+                    // Check if it's a subject
+                    const subj = SUBJECTS.find(s => s.key.toLowerCase() === token.toLowerCase() || s.name.toLowerCase() === token.toLowerCase());
+                    if (subj) return { view: 'subject', subjectKey: subj.key };
+
+                    // Check if it's a book
+                    const bk = allBooks.find(b => b.id.toLowerCase() === token.toLowerCase() || b.title.toLowerCase() === token.toLowerCase());
+                    if (bk) return { view: 'reader', bookId: bk.id, chapter: '0' };
+
+                    // Check if it's a chapter filename (e.g. jemh101 or jemh101.pdf)
+                    const cleanFn = token.replace('.pdf', '').toLowerCase();
+                    for (const b of allBooks) {
+                        const chIdx = b.chapters.findIndex(c => c.filename.toLowerCase().replace('.pdf', '') === cleanFn);
+                        if (chIdx !== -1) {
+                            return { view: 'reader', bookId: b.id, chapterIdx: chIdx };
+                        }
+                    }
+                }
+
+                return { view: 'subjects' };
+            }
+
+            function syncHash(route) {
+                isNavigating = true;
+                if (route.view === 'subjects') {
+                    if (window.location.hash && window.location.hash !== '#') {
+                        history.pushState(null, '', window.location.pathname + window.location.search);
+                    }
+                } else if (route.view === 'subject') {
+                    window.location.hash = `#/subject/${route.subjectKey}`;
+                } else if (route.view === 'reader') {
+                    window.location.hash = `#/book/${route.bookId}/${route.chapterCode}`;
+                }
+                setTimeout(() => { isNavigating = false; }, 50);
+            }
+
+            function handleRoute() {
+                if (isNavigating || !allBooks.length) return;
+                const route = parseHash();
+
+                if (route.view === 'subjects') {
+                    showSubjectsView(false);
+                } else if (route.view === 'subject') {
+                    selectSubject(route.subjectKey, false);
+                } else if (route.view === 'reader') {
+                    const bk = allBooks.find(b => b.id.toLowerCase() === (route.bookId || '').toLowerCase());
+                    if (bk) {
+                        let chIdx = 0;
+                        if (typeof route.chapterIdx === 'number') {
+                            chIdx = route.chapterIdx;
+                        } else if (route.chapter) {
+                            const q = String(route.chapter).toLowerCase().replace('.pdf', '');
+                            // Try finding matching filename
+                            const fnIdx = bk.chapters.findIndex(c => c.filename.toLowerCase().replace('.pdf', '') === q);
+                            if (fnIdx !== -1) {
+                                chIdx = fnIdx;
+                            } else {
+                                // Try matching pill label (e.g. '01', 'pr', 'a1', 'an')
+                                const lblIdx = bk.chapters.findIndex(c => getChapterPillLabel(c).toLowerCase() === q);
+                                if (lblIdx !== -1) {
+                                    chIdx = lblIdx;
+                                } else if (!isNaN(q)) {
+                                    const num = parseInt(q, 10);
+                                    if (num >= 0 && num < bk.chapters.length) chIdx = num;
+                                }
+                            }
+                        }
+                        openReader(bk.id, chIdx, false);
+                    } else {
+                        showSubjectsView(false);
+                    }
+                }
+            }
+
+            // ============================================================
             // Initialization & Data Loading
             // ============================================================
             async function init() {
@@ -1174,6 +1276,11 @@
                     const res = await fetch('web_data.json');
                     allBooks = await res.json();
                     renderSubjectsGrid();
+
+                    // Handle initial URL route
+                    window.addEventListener('hashchange', handleRoute);
+                    window.addEventListener('popstate', handleRoute);
+                    handleRoute();
                 } catch (e) {
                     console.error("Failed to load catalog:", e);
                 }
@@ -1210,7 +1317,7 @@
             // ============================================================
             // LEVEL 2: Select Subject & Render its Book Cards (Portrait)
             // ============================================================
-            function selectSubject(subjectKey) {
+            function selectSubject(subjectKey, updateUrl = true) {
                 currentSubject = SUBJECTS.find(s => s.key === subjectKey);
                 if (!currentSubject) return;
 
@@ -1223,6 +1330,8 @@
                 $('booksHeaderTitle').textContent = currentSubject.name;
                 $('booksViewTitle').textContent = currentSubject.name;
                 $('booksViewDesc').textContent = `${books.length} Textbook${books.length > 1 ? 's' : ''} • ${currentSubject.desc}`;
+
+                if (updateUrl) syncHash({ view: 'subject', subjectKey: currentSubject.key });
 
                 const container = $('subjectBooksGrid');
                 container.innerHTML = books.map(b => {
@@ -1265,11 +1374,12 @@
             // ============================================================
             // Navigation Handlers
             // ============================================================
-            function showSubjectsView() {
+            function showSubjectsView(updateUrl = true) {
                 viewBooks.style.display = 'none';
                 appReader.style.display = 'none';
                 viewSubjects.style.display = 'block';
                 pdfFrame.src = 'about:blank';
+                if (updateUrl) syncHash({ view: 'subjects' });
             }
 
             function backFromReader() {
@@ -1277,17 +1387,24 @@
                 pdfFrame.src = 'about:blank';
                 if (currentSubject) {
                     viewBooks.style.display = 'block';
+                    syncHash({ view: 'subject', subjectKey: currentSubject.key });
                 } else {
                     viewSubjects.style.display = 'block';
+                    syncHash({ view: 'subjects' });
                 }
             }
 
             // ============================================================
             // LEVEL 3: Reader View (Mozilla PDF.js Viewer Engine)
             // ============================================================
-            function openReader(bookId, chapterIdx = 0) {
+            function openReader(bookId, chapterIdx = 0, updateUrl = true) {
                 currentBook = allBooks.find(b => b.id === bookId);
                 if (!currentBook) return;
+
+                // Find parent subject if not set
+                if (!currentSubject) {
+                    currentSubject = SUBJECTS.find(s => s.bookIds.includes(currentBook.id)) || null;
+                }
 
                 viewSubjects.style.display = 'none';
                 viewBooks.style.display = 'none';
@@ -1305,7 +1422,7 @@
                 }
 
                 renderChapterList();
-                selectChapter(chapterIdx);
+                selectChapter(chapterIdx, updateUrl);
 
                 if (isMobile()) closeSidebar();
                 setTimeout(() => showToast('Use ← → to switch chapters · / to search'), 800);
@@ -1350,7 +1467,7 @@
 
                     el.addEventListener('click', (e) => {
                         e.preventDefault();
-                        selectChapter(idx);
+                        selectChapter(idx, true);
                         if (isMobile()) closeSidebar();
                     });
 
@@ -1365,11 +1482,12 @@
                 }
             }
 
-            function selectChapter(idx) {
+            function selectChapter(idx, updateUrl = true) {
                 if (!currentBook || idx < 0 || idx >= currentBook.chapters.length) return;
                 currentChapterIdx = idx;
                 const ch = currentBook.chapters[idx];
                 const lbl = getChapterPillLabel(ch);
+                const chCode = ch.filename.toLowerCase().replace('.pdf', '');
 
                 // Update active state in sidebar
                 document.querySelectorAll('.ch-item').forEach((el) => {
@@ -1397,6 +1515,11 @@
                 // Load PDF in Mozilla PDF.js Viewer iframe
                 showLoader(`Loading ${ch.title} in PDF.js…`);
                 pdfFrame.src = mozViewerUrl;
+
+                // Sync URL Hash
+                if (updateUrl) {
+                    syncHash({ view: 'reader', bookId: currentBook.id, chapterCode: chCode });
+                }
             }
 
             // Hide loader when iframe loads
@@ -1435,10 +1558,10 @@
             backdrop.addEventListener('click', closeSidebar);
 
             prevBtn.addEventListener('click', () => {
-                if (currentChapterIdx > 0) selectChapter(currentChapterIdx - 1);
+                if (currentChapterIdx > 0) selectChapter(currentChapterIdx - 1, true);
             });
             nextBtn.addEventListener('click', () => {
-                if (currentBook && currentChapterIdx < currentBook.chapters.length - 1) selectChapter(currentChapterIdx + 1);
+                if (currentBook && currentChapterIdx < currentBook.chapters.length - 1) selectChapter(currentChapterIdx + 1, true);
             });
 
             searchInput.addEventListener('input', (e) => renderChapterList(e.target.value));
@@ -1456,10 +1579,10 @@
                 if (appReader.style.display === 'grid') {
                     switch (e.key) {
                         case 'ArrowLeft':
-                            if (currentChapterIdx > 0) { e.preventDefault(); selectChapter(currentChapterIdx - 1); }
+                            if (currentChapterIdx > 0) { e.preventDefault(); selectChapter(currentChapterIdx - 1, true); }
                             break;
                         case 'ArrowRight':
-                            if (currentBook && currentChapterIdx < currentBook.chapters.length - 1) { e.preventDefault(); selectChapter(currentChapterIdx + 1); }
+                            if (currentBook && currentChapterIdx < currentBook.chapters.length - 1) { e.preventDefault(); selectChapter(currentChapterIdx + 1, true); }
                             break;
                         case 's': case 'S':
                             e.preventDefault();
