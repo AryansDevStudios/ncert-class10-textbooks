@@ -17,6 +17,9 @@ A clean, modern, and watermark-free digital library for **NCERT Class 10 Textboo
 - **Hindi**:
   - *Kshitij-2* (Course A Main Textbook)
   - *Kritika* (Course A Supplementary Reader)
+- **Information Technology (IT 402)**:
+  - *Domestic Data Entry Operator* (Part B — Subject Specific Skills)
+  - *Employability Skills* (Part A — Mandatory Common Module)
 
 ## 🛠️ Python Automation Scripts
 

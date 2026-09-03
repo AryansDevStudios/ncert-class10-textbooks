@@ -97,6 +97,25 @@ TARGET_BOOKS = [
         "code": "jess4",
         "num_chapters": 5,
         "folder": os.path.join("Class_10", "Social_Science", "Political_Science_Democratic_Politics")
+    },
+    # Information Technology (Subject Code 402)
+    {
+        "id": "Domestic_Data_Entry_Operator",
+        "category": "Information_Technology",
+        "title": "Domestic Data Entry Operator (Part B)",
+        "code": "jhde1",
+        "num_chapters": 4,
+        "zip_url": "https://ncert.nic.in/vocational/pdf/jhde1dd.zip",
+        "folder": os.path.join("Class_10", "Information_Technology", "Domestic_Data_Entry_Operator")
+    },
+    {
+        "id": "Employability_Skills",
+        "category": "Information_Technology",
+        "title": "Employability Skills (Part A)",
+        "code": "jees1",
+        "num_chapters": 5,
+        "zip_url": "https://ncert.nic.in/vocational/pdf/jees1dd.zip",
+        "folder": os.path.join("Class_10", "Information_Technology", "Employability_Skills")
     }
 ]
 
@@ -107,6 +126,14 @@ HEADERS = {
 
 def download_file(url, target_path):
     os.makedirs(os.path.dirname(target_path), exist_ok=True)
+    try:
+        import subprocess
+        cmd = ["curl.exe", "-4", "-fSL", "-A", HEADERS["User-Agent"], "-e", "https://ncert.nic.in/vocational.php", "-o", target_path, url]
+        res = subprocess.run(cmd, capture_output=True)
+        if res.returncode == 0:
+            return
+    except Exception:
+        pass
     req = urllib.request.Request(url, headers=HEADERS)
     with urllib.request.urlopen(req, timeout=30) as resp, open(target_path, "wb") as f:
         f.write(resp.read())
@@ -124,7 +151,7 @@ def fetch_all_textbooks():
 
         zip_filename = f"{code}_complete.zip"
         zip_path = os.path.join(folder, zip_filename)
-        zip_url = f"https://ncert.nic.in/textbook/pdf/{code}dd.zip"
+        zip_url = b.get("zip_url", f"https://ncert.nic.in/textbook/pdf/{code}dd.zip")
 
         print(f"\n[Book] {b['title']} ({code})")
         if not os.path.exists(zip_path):

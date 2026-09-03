@@ -1017,11 +1017,11 @@
                 </nav>
                 <div class="hub-header">
                     <h1 class="hub-title">Select a Subject</h1>
-                    <p class="hub-subtitle">Choose from Hindi, English, Maths, Science, or Social Science (SST) to view textbooks</p>
+                    <p class="hub-subtitle">Choose from Hindi, English, Maths, Science, Social Science (SST), or Information Technology (IT) to view textbooks</p>
                 </div>
 
                 <div class="subjects-grid" id="subjectsGrid">
-                    <!-- 5 Subject Cards Injected by JS -->
+                    <!-- 6 Subject Cards Injected by JS -->
                 </div>
             </div>
         </div>
@@ -1246,6 +1246,17 @@
                         'Political_Science_Democratic_Politics'
                     ],
                     iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>`
+                },
+                {
+                    key: 'Information_Technology',
+                    name: 'Information Tech (IT)',
+                    mark: 'IT',
+                    desc: 'Class 10 IT (Code 402) — Domestic Data Entry Operator & Employability Skills',
+                    bookIds: [
+                        'Domestic_Data_Entry_Operator',
+                        'Employability_Skills'
+                    ],
+                    iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`
                 }
             ];
 
@@ -1285,8 +1296,11 @@
                 return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
             }
 
-            // Always resolve file URL via jsDelivr CDN (GitHub)
+            // Resolve file URL via jsDelivr CDN (GitHub), or direct local path on localhost
             function getPdfUrl(relPath) {
+                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                    return relPath;
+                }
                 return CDN_BASE + relPath;
             }
 

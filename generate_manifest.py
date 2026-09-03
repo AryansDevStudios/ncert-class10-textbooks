@@ -6,8 +6,11 @@ and produces web_data.json used by index.html for interactive navigation.
 """
 
 import os
+import sys
 import json
 import fitz  # PyMuPDF
+
+sys.stdout.reconfigure(encoding='utf-8')
 
 # Authentic chapter title mapping
 CHAPTER_TITLES = {
@@ -128,19 +131,38 @@ CHAPTER_TITLES = {
     "jess403.pdf": "Gender, Religion and Caste",
     "jess404.pdf": "Political Parties",
     "jess405.pdf": "Outcomes of Democracy",
+
+    # Information Technology: Domestic Data Entry Operator (jhde1)
+    "jhde1ps.pdf": "Preliminary Pages & Table of Contents",
+    "jhde101.pdf": "Unit 1: Digital Documentation (Advanced)",
+    "jhde102.pdf": "Unit 2: Electronic Spreadsheet (Advanced)",
+    "jhde103.pdf": "Unit 3: Database Management System",
+    "jhde104.pdf": "Unit 4: Web Applications and Security",
+    "jhde1an.pdf": "Answers & Solutions",
+
+    # Information Technology: Employability Skills (jees1)
+    "jees1ps.pdf": "Preliminary Pages & Table of Contents",
+    "jees101.pdf": "Unit 1: Communication Skills - II",
+    "jees102.pdf": "Unit 2: Self-Management Skills - II",
+    "jees103.pdf": "Unit 3: Information and Communication Technology (ICT) Skills - II",
+    "jees104.pdf": "Unit 4: Entrepreneurial Skills - II",
+    "jees105.pdf": "Unit 5: Green Skills - II",
+    "jees1an.pdf": "Answers & Solutions",
 }
 
 BOOKS_CONFIG = [
-    {"id": "Kshitij_2", "category": "Hindi", "title": "Kshitij 2", "code": "jhks1", "dir": "Class_10/Hindi/Kshitij_2"},
-    {"id": "Kritika", "category": "Hindi", "title": "Kritika", "code": "jhkr1", "dir": "Class_10/Hindi/Kritika"},
-    {"id": "First_Flight", "category": "English", "title": "First Flight", "code": "jeff1", "dir": "Class_10/English/First_Flight"},
-    {"id": "Footprints_Without_Feet", "category": "English", "title": "Footprints Without Feet", "code": "jefp1", "dir": "Class_10/English/Footprints_Without_Feet"},
-    {"id": "Mathematics", "category": "Mathematics", "title": "Mathematics", "code": "jemh1", "dir": "Class_10/Mathematics/Mathematics"},
-    {"id": "Science", "category": "Science", "title": "Science", "code": "jesc1", "dir": "Class_10/Science/Science"},
-    {"id": "Geography_Contemporary_India", "category": "Social_Science", "title": "Contemporary India – II (Geography)", "code": "jess1", "dir": "Class_10/Social_Science/Geography_Contemporary_India"},
-    {"id": "Economics_Understanding_Economic_Development", "category": "Social_Science", "title": "Understanding Economic Development (Economics)", "code": "jess2", "dir": "Class_10/Social_Science/Economics_Understanding_Economic_Development"},
-    {"id": "History_India_and_the_Contemporary_World_II", "category": "Social_Science", "title": "India and the Contemporary World – II (History)", "code": "jess3", "dir": "Class_10/Social_Science/History_India_and_the_Contemporary_World_II"},
-    {"id": "Political_Science_Democratic_Politics", "category": "Social_Science", "title": "Democratic Politics – II (Political Science)", "code": "jess4", "dir": "Class_10/Social_Science/Political_Science_Democratic_Politics"},
+    {"id": "Kshitij_2", "category": "Hindi", "category_key": "Hindi", "title": "Kshitij 2", "code": "jhks1", "theme_color": "#F59E0B", "badge": "Hindi", "dir": "Class_10/Hindi/Kshitij_2"},
+    {"id": "Kritika", "category": "Hindi", "category_key": "Hindi", "title": "Kritika", "code": "jhkr1", "theme_color": "#F59E0B", "badge": "Hindi", "dir": "Class_10/Hindi/Kritika"},
+    {"id": "First_Flight", "category": "English", "category_key": "English", "title": "First Flight", "code": "jeff1", "theme_color": "#3B82F6", "badge": "English", "dir": "Class_10/English/First_Flight"},
+    {"id": "Footprints_Without_Feet", "category": "English", "category_key": "English", "title": "Footprints Without Feet", "code": "jefp1", "theme_color": "#3B82F6", "badge": "English", "dir": "Class_10/English/Footprints_Without_Feet"},
+    {"id": "Mathematics", "category": "Mathematics", "category_key": "Mathematics", "title": "Mathematics", "code": "jemh1", "theme_color": "#10B981", "badge": "Maths", "dir": "Class_10/Mathematics/Mathematics"},
+    {"id": "Science", "category": "Science", "category_key": "Science", "title": "Science", "code": "jesc1", "theme_color": "#8B5CF6", "badge": "Science", "dir": "Class_10/Science/Science"},
+    {"id": "Geography_Contemporary_India", "category": "Social_Science", "category_key": "Social_Science", "title": "Contemporary India – II (Geography)", "code": "jess1", "theme_color": "#EC4899", "badge": "Social Science", "dir": "Class_10/Social_Science/Geography_Contemporary_India"},
+    {"id": "Economics_Understanding_Economic_Development", "category": "Social_Science", "category_key": "Social_Science", "title": "Understanding Economic Development (Economics)", "code": "jess2", "theme_color": "#EC4899", "badge": "Social Science", "dir": "Class_10/Social_Science/Economics_Understanding_Economic_Development"},
+    {"id": "History_India_and_the_Contemporary_World_II", "category": "Social_Science", "category_key": "Social_Science", "title": "India and the Contemporary World – II (History)", "code": "jess3", "theme_color": "#EC4899", "badge": "Social Science", "dir": "Class_10/Social_Science/History_India_and_the_Contemporary_World_II"},
+    {"id": "Political_Science_Democratic_Politics", "category": "Social_Science", "category_key": "Social_Science", "title": "Democratic Politics – II (Political Science)", "code": "jess4", "theme_color": "#EC4899", "badge": "Social Science", "dir": "Class_10/Social_Science/Political_Science_Democratic_Politics"},
+    {"id": "Domestic_Data_Entry_Operator", "category": "Information_Technology", "category_key": "Information_Technology", "title": "Domestic Data Entry Operator (Part B)", "code": "jhde1", "theme_color": "#06B6D4", "badge": "Information Technology", "dir": "Class_10/Information_Technology/Domestic_Data_Entry_Operator"},
+    {"id": "Employability_Skills", "category": "Information_Technology", "category_key": "Information_Technology", "title": "Employability Skills (Part A)", "code": "jees1", "theme_color": "#06B6D4", "badge": "Information Technology", "dir": "Class_10/Information_Technology/Employability_Skills"},
 ]
 
 def format_size(bytes_sz):
@@ -157,10 +179,10 @@ def build_manifest():
         chapters_dir = os.path.join(book_dir, "chapters")
         
         cover_path = os.path.join(book_dir, "cover.jpg")
-        cover_url = f"{book_dir}/cover.jpg" if os.path.exists(cover_path) else None
+        cover_url = f"{book_dir}/cover.jpg".replace("\\", "/") if os.path.exists(cover_path) else None
 
         zip_path = os.path.join(book_dir, f"{cfg['code']}_complete.zip")
-        zip_url = f"{book_dir}/{cfg['code']}_complete.zip" if os.path.exists(zip_path) else None
+        zip_url = f"{book_dir}/{cfg['code']}_complete.zip".replace("\\", "/") if os.path.exists(zip_path) else None
 
         chapters_list = []
         if os.path.exists(chapters_dir):
@@ -203,17 +225,22 @@ def build_manifest():
                     })
 
         total_chapters_all += len(chapters_list)
+        ch_count = sum(1 for c in chapters_list if c["type"] == "chapter")
         manifest.append({
             "id": cfg["id"],
             "category": cfg["category"],
+            "category_key": cfg["category_key"],
             "title": cfg["title"],
             "code": cfg["code"],
             "cover_url": cover_url,
             "zip_url": zip_url,
-            "chapters_count": len(chapters_list),
+            "chapters_count": ch_count,
+            "total_files": len(chapters_list),
+            "theme_color": cfg.get("theme_color", "#06B6D4"),
+            "badge": cfg.get("badge", cfg["category"]),
             "chapters": chapters_list
         })
-        print(f"✓ Processed {cfg['title']}: {len(chapters_list)} chapters")
+        print(f"✓ Processed {cfg['title']}: {ch_count} chapters ({len(chapters_list)} files)")
 
     with open("web_data.json", "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
