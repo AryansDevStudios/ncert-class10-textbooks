@@ -1198,6 +1198,7 @@
             // ============================================================
             const GITHUB_REPO = 'AryansDevStudios/ncert-class10-pdf-storage';
             const CDN_BASE = `https://cdn.jsdelivr.net/gh/${GITHUB_REPO}@main/`;
+            const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/`;
             const PDFJS_BASE = 'https://mozilla.github.io/pdf.js/web/viewer.html';
 
             // 5 Main Subject Categories Config
@@ -1296,10 +1297,16 @@
                 return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
             }
 
-            // Resolve file URL via jsDelivr CDN (GitHub), or direct local path on localhost
+            // Resolve file URL via jsDelivr CDN, GitHub Raw for ZIPs (>50MB support), or direct local path on localhost
             function getPdfUrl(relPath) {
+                if (!relPath) return '';
                 if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
                     return relPath;
+                }
+                // jsDelivr strictly blocks files > 50 MB with 403 Forbidden (e.g. Science complete ZIP is 67.8 MB).
+                // GitHub Raw serves files up to 100 MB directly without truncation or errors.
+                if (relPath.toLowerCase().endsWith('.zip')) {
+                    return GITHUB_RAW_BASE + relPath;
                 }
                 return CDN_BASE + relPath;
             }
@@ -1307,6 +1314,35 @@
             function getMozillaViewerUrl(relPath) {
                 const fileUrl = getPdfUrl(relPath);
                 return PDFJS_BASE + '?file=' + encodeURIComponent(fileUrl);
+            }
+
+            // Direct binary download to trigger browser save dialog instead of opening in built-in PDF viewer
+            async function triggerDirectDownload(url, filename) {
+                showToast(`Starting download: ${filename}…`);
+                try {
+                    const res = await fetch(url, { mode: 'cors' });
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    const blob = await res.blob();
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = blobUrl;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    setTimeout(() => {
+                        document.body.removeChild(a);
+                        window.URL.revokeObjectURL(blobUrl);
+                    }, 250);
+                    showToast(`Download complete: ${filename}`);
+                } catch (err) {
+                    console.warn('Direct blob download error, fallback to direct link:', err);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = filename;
+                    a.target = '_blank';
+                    a.click();
+                }
             }
 
             function showLoader(msg) {
@@ -1516,7 +1552,7 @@
                                         Read Book
                                     </button>
                                     ${zipUrl ? `
-                                        <a class="btn" href="${zipUrl}" download title="Download Full Book ZIP">
+                                        <a class="btn" href="${zipUrl}" download title="Download Full Book ZIP" onclick="event.preventDefault(); window.appNav.downloadFile('${zipUrl}', '${b.code || b.id}_complete.zip')">
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                             <span class="label">ZIP</span>
                                         </a>
@@ -1772,12 +1808,30 @@
                 }
             });
 
+            downloadPdfBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (!currentBook || currentChapterIdx < 0) return;
+                const ch = currentBook.chapters[currentChapterIdx];
+                const url = downloadPdfBtn.href;
+                const filename = downloadPdfBtn.getAttribute('download') || ch.filename;
+                triggerDirectDownload(url, filename);
+            });
+
+            downloadZipBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (!currentBook || !currentBook.zip_url) return;
+                const url = downloadZipBtn.href;
+                const filename = `${currentBook.code || currentBook.id}_complete.zip`;
+                triggerDirectDownload(url, filename);
+            });
+
             // Expose navigation methods globally
             window.appNav = {
                 selectSubject,
                 showSubjectsView,
                 openReader,
-                backFromReader
+                backFromReader,
+                downloadFile: triggerDirectDownload
             };
 
             // Global click handlers
